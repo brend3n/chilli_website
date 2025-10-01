@@ -186,6 +186,46 @@
             font-style: italic;
         }
 
+        /* Countdown Section */
+        .countdown-section {
+            background: #8BD3DD;
+            border: 4px solid #001858;
+            padding: 50px 40px;
+            margin: 40px 0;
+            box-shadow: 10px 10px 0 #001858;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: #FEF6E4;
+            border: 4px solid #001858;
+            padding: 30px 40px;
+            box-shadow: 6px 6px 0 #001858;
+            min-width: 140px;
+            text-align: center;
+        }
+
+        .countdown-value {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #FF6B35;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .countdown-label {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #001858;
+            text-transform: uppercase;
+        }
+
         /* CTA Button */
         .cta-section {
             text-align: center;
@@ -327,6 +367,28 @@
             </div>
         </div>
 
+        <div class="countdown-section">
+            <h2 style="font-size: 2.5rem; font-weight: 900; color: #001858; text-transform: uppercase; text-align: center; margin-bottom: 30px;">Time Until Destiny</h2>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-value" id="days">00</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="hours">00</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="minutes">00</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="seconds">00</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+        </div>
+
         <div class="cta-section">
             <a href="https://www.youtube.com/watch?v=jya-1kaY7gw" target="_blank" class="cta-button">
                 I'M READY TO EAT
@@ -338,5 +400,36 @@
             <p style="margin-top: 10px; font-size: 1rem;">Skyline Chilli Tournament 2025 - A Journey Years in the Making</p>
         </div>
     </div>
+
+    <script>
+        // Countdown to October 7th, 2025 at 6:30 PM
+        const targetDate = new Date('October 7, 2025 18:30:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
 </body>
 </html>
