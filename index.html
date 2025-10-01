@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skyline Chilli Dog Tournament 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #FEF6E4;
+            color: #001858;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: #F582AE;
+            border: 4px solid #001858;
+            padding: 60px 40px;
+            margin: 40px 0;
+            box-shadow: 12px 12px 0 #001858;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #001858;
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 20px;
+            text-shadow: 4px 4px 0 #FEF6E4;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #001858;
+            margin-bottom: 30px;
+        }
+
+        .hero .tagline {
+            font-size: 1.2rem;
+            color: #001858;
+            font-style: italic;
+            background: #FEF6E4;
+            border: 3px solid #001858;
+            padding: 15px 25px;
+            display: inline-block;
+            box-shadow: 6px 6px 0 #001858;
+        }
+
+        /* Food Icons */
+        .food-icons {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin: 60px 0;
+            flex-wrap: wrap;
+        }
+
+        .food-card {
+            background: #8BD3DD;
+            border: 4px solid #001858;
+            padding: 40px;
+            box-shadow: 8px 8px 0 #001858;
+            transition: all 0.3s ease;
+            flex: 1;
+            min-width: 280px;
+            max-width: 400px;
+        }
+
+        .food-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0 #001858;
+        }
+
+        .food-icon {
+            font-size: 6rem;
+            margin-bottom: 20px;
+            display: block;
+            text-align: center;
+        }
+
+        .food-card h3 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #001858;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        /* Info Section */
+        .info-section {
+            background: #FF6B35;
+            border: 4px solid #001858;
+            padding: 50px 40px;
+            margin: 40px 0;
+            box-shadow: 10px 10px 0 #001858;
+        }
+
+        .info-section h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #FEF6E4;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            text-shadow: 3px 3px 0 #001858;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .info-card {
+            background: #FEF6E4;
+            border: 3px solid #001858;
+            padding: 25px;
+            box-shadow: 5px 5px 0 #001858;
+        }
+
+        .info-card h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #001858;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .info-card p {
+            font-size: 1.1rem;
+            color: #001858;
+            line-height: 1.6;
+        }
+
+        /* Postponement History */
+        .history {
+            background: #F3D2C1;
+            border: 4px solid #001858;
+            padding: 50px 40px;
+            margin: 40px 0;
+            box-shadow: 10px 10px 0 #001858;
+        }
+
+        .history h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #001858;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .history-item {
+            background: #FEF6E4;
+            border: 3px solid #001858;
+            padding: 20px 30px;
+            margin: 20px 0;
+            box-shadow: 5px 5px 0 #001858;
+            border-left: 12px solid #FF6B35;
+        }
+
+        .history-item .date {
+            font-weight: 900;
+            color: #FF6B35;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .history-item .reason {
+            font-size: 1.1rem;
+            color: #001858;
+            font-style: italic;
+        }
+
+        /* CTA Button */
+        .cta-section {
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .cta-button {
+            background: #F582AE;
+            border: 4px solid #001858;
+            padding: 25px 60px;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #001858;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 8px 8px 0 #001858;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0 #001858;
+            background: #8BD3DD;
+        }
+
+        /* Footer */
+        .footer {
+            background: #001858;
+            color: #FEF6E4;
+            padding: 40px;
+            text-align: center;
+            border: 4px solid #001858;
+            margin-top: 60px;
+        }
+
+        .footer p {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .food-card {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>🌭 SKYLINE CHILLI DOG TOURNAMENT 🌭</h1>
+            <div class="subtitle">IT'S FINALLY HAPPENING!</div>
+            <div class="tagline">"After 47 postponements, we're actually doing this"</div>
+        </div>
+
+        <div class="food-icons">
+            <div class="food-card floating">
+                <div class="food-icon">🌭</div>
+                <h3>Chilli Dogs</h3>
+            </div>
+            <div class="food-card floating" style="animation-delay: 0.5s;">
+                <div class="food-icon">🧀</div>
+                <h3>Mountains of Cheddar</h3>
+            </div>
+            <div class="food-card floating" style="animation-delay: 1s;">
+                <div class="food-icon">🍝</div>
+                <h3>Chilli Spaghetti</h3>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>Event Details</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>📅 Date</h3>
+                    <p>TBD (But we're serious this time!)</p>
+                </div>
+                <div class="info-card">
+                    <h3>📍 Location</h3>
+                    <p>Skyline Chilli - Where dreams look questionable</p>
+                </div>
+                <div class="info-card">
+                    <h3>🏆 Prize</h3>
+                    <p>Eternal glory & bragging rights</p>
+                </div>
+                <div class="info-card">
+                    <h3>👥 Participants</h3>
+                    <p>Our brave coworkers</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="history">
+            <h2>A Brief History of Postponements</h2>
+            <div class="history-item">
+                <div class="date">Attempt #1</div>
+                <div class="reason">"Mercury is in retrograde"</div>
+            </div>
+            <div class="history-item">
+                <div class="date">Attempt #2</div>
+                <div class="reason">"Someone needs to wash their dog"</div>
+            </div>
+            <div class="history-item">
+                <div class="date">Attempt #3</div>
+                <div class="reason">"The vibes were off"</div>
+            </div>
+            <div class="history-item">
+                <div class="date">Attempt #4</div>
+                <div class="reason">"Waiting for the perfect cheese-to-chilli ratio in the cosmos"</div>
+            </div>
+            <div class="history-item">
+                <div class="date">Attempt #5</div>
+                <div class="reason">"Had to see if the chilli would look better next week (it didn't)"</div>
+            </div>
+            <div class="history-item">
+                <div class="date">NOW</div>
+                <div class="reason">"NO MORE EXCUSES. IT'S HAPPENING."</div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <a href="https://www.youtube.com/watch?v=jya-1kaY7gw" target="_blank" class="cta-button">
+                I'M READY TO EAT
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>🧀 May the Cheese Be With You 🧀</p>
+            <p style="margin-top: 10px; font-size: 1rem;">Skyline Chilli Tournament 2025 - A Journey Years in the Making</p>
+        </div>
+    </div>
+</body>
+</html>
